@@ -1,0 +1,2 @@
+module Controllers::PagesHelper
+end
