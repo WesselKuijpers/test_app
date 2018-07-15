@@ -35,7 +35,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    flash[:notice]  = "Destroyed."
+    flash[:notice] = "Destroyed."
     redirect_to posts_path
   end
 
