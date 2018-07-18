@@ -11,3 +11,27 @@
  * It is generally better to create a new file per style scope.
  *
  */
+
+.center {
+  text-align: center;
+}
+
+.jumbotron {
+  background-image: asset-url('alpine-bg.png');
+  background-size: auto;
+  height: 550px;
+}
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";

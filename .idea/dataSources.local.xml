@@ -4,5 +4,8 @@
     <data-source name="postgresql" uuid="6b3ad720-ec00-46ea-ba4d-71449c595e52">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
     </data-source>
+    <data-source name="postgresql [2]" uuid="96905bd8-be97-45c1-af35-6a1516bc90d3">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+    </data-source>
   </component>
 </project>
