@@ -1,0 +1,30 @@
+<h1 align="center">Signup:</h1>
+
+<% if @user.errors.any? %>
+  <h2>Article creation was prevented:</h2>
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @user do |f| %>
+  <p>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </p>
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.submit "Sign up"%>
+  </p>
+<% end %>
+
+<%= link_to "Back", posts_path %>
