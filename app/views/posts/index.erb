@@ -2,8 +2,7 @@
 <p>
   <%= link_to "Create New", new_post_path %>
 </p>
-
+<%= will_paginate %>
 <%= render "post", obj: @posts %>
-
-
+<%= will_paginate %>
 
