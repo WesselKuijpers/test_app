@@ -1,6 +1,18 @@
 <h1>Showing selected post</h1>
 
 <p>Title: <%= @post.title %></p>
+<p>Created by:</p>
+  <ul>
+    <li>
+      <%= link_to gravatar_for(@post.user), user_path(@post.user) %>
+    </li>
+    <li>
+      <%= link_to @post.user.username, user_path(@post.user) %>
+    </li>
+    <li>
+      <%= pluralize(@post.user.posts.count, "post") if @post.user.posts %>
+    </li>
+  </ul>
 <p>Description: <%= @post.description %></p>
 
 <%= link_to "Edit", edit_post_path(@post) %>
