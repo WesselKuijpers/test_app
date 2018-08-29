@@ -1,0 +1,28 @@
+<% if @user.errors.any? %>
+  <h2>User creation was prevented:</h2>
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @user do |f| %>
+  <p>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </p>
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.submit(@user.new_record? ? "Sign Up!" : "Update") %>
+  </p>
+<% end %>
+
+<%= link_to "Back", posts_path %>

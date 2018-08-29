@@ -2,7 +2,7 @@ class User < ApplicationRecord
 
   has_many :posts
 
-  before_save { self.email = email.downcase! }
+  before_save { email.downcase! }
 
   validates :username,
             presence: true,
@@ -13,7 +13,7 @@ class User < ApplicationRecord
 
   validates :email,
             presence: true,
-            uniqueness: { case_sensitive: false},
+            uniqueness: { case_sensitive: false },
             length: { maximum: 105 },
             format: { with: VALID_EMAIL_REGEX }
 
