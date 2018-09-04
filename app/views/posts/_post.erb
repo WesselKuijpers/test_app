@@ -11,7 +11,7 @@
       <td><%= post.description %></td>
       <td><%= post.user.username %></td>
       <td><%= time_ago_in_words(post.created_at) %>  ago </td>
-      <% if logged_in? && current_user == post.user %>
+      <% if logged_in? && (current_user == post.user || current_user.admin?) %>
         <td><%= link_to ' | edit | ', edit_post_path(post) %></td>
         <td><%= link_to ' | show | ', post_path(post) %></td>
         <td><%= link_to ' | delete | ', post_path(post), method: :delete, data: {confirm: "Are you sure?"} %></td>
