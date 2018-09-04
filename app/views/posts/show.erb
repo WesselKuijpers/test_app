@@ -15,6 +15,7 @@
   </ul>
 <p>Description: <%= @post.description %></p>
 
+<% if logged_in? && current_user == @post.user %>
 <%= link_to "Edit", edit_post_path(@post) %>
-|
+<% end %>
 <%= link_to "Back", posts_path %>
