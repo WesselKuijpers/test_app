@@ -4,6 +4,7 @@
     <th>Description:</th>
     <th>Created by:</th>
     <th>Created:</th>
+    <th>Categories:</th>
   </tr>
   <% obj.each do |post|%>
     <tr>
@@ -11,6 +12,11 @@
       <td><%= post.description %></td>
       <td><%= post.user.username %></td>
       <td><%= time_ago_in_words(post.created_at) %>  ago </td>
+      <td>
+        <% if post.categories.any? %>
+          <%= render post.categories %>
+        <% end %>
+      </td>
       <% if logged_in? && (current_user == post.user || current_user.admin?) %>
         <td><%= link_to ' | edit | ', edit_post_path(post) %></td>
         <td><%= link_to ' | show | ', post_path(post) %></td>

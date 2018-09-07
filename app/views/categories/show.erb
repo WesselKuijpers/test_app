@@ -1,0 +1,4 @@
+<h1>"<%= @category.name %>" post list</h1>
+<%= will_paginate @category_posts %>
+<%= render "posts/post", obj: @category_posts %>
+<%= will_paginate @category_posts %>

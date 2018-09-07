@@ -25,7 +25,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    # next line is temporary
     @post.user = current_user
     if @post.save
       flash[:notice] = "Post was succesfully created."
@@ -50,7 +49,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :description)
+    params.require(:post).permit(:title, :description, category_ids: [])
   end
 
   def require_same_user
