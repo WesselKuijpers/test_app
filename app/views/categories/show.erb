@@ -1,4 +1,8 @@
 <h1>"<%= @category.name %>" post list</h1>
+<% if logged_in? && current_user.admin? %>
+  <%= link_to "Edit category", edit_category_path(@category) %>
+<% end %>
+<br>
 <%= will_paginate @category_posts %>
 <%= render "posts/post", obj: @category_posts %>
 <%= will_paginate @category_posts %>
